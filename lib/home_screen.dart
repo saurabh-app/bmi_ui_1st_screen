@@ -14,9 +14,9 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text("BMI Calculator"),
-        backgroundColor: backgroundColor,
+        backgroundColor: darkBlueColor,
       ),
-      backgroundColor: backgroundColor,
+      backgroundColor: darkBlueColor,
 
       body: Column(
         children: [
@@ -24,60 +24,56 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Row(
               children: [
                 Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: blueColor,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
+                  child: ReusableCard(Colour: blueColor,),
                 ),
                 Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: blueColor,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
+                  child: ReusableCard(Colour: blueColor, ),
                 ),
               ],
             ),
           ),
           Expanded(
-            child: Container(
-              margin: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                color: blueColor,
-                borderRadius: BorderRadius.circular(10),
-              ),
-            ),
+            child: ReusableCard(Colour: blueColor,),
           ),
           Expanded(
             child: Row(
               children: [
                 Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: blueColor,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
+                  child: ReusableCard(Colour: blueColor,),
                 ),
                 Expanded(
-                  child: Container(
-                    margin: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: blueColor,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
+                  child: ReusableCard(Colour: blueColor,),
                 ),
               ],
             ),
           ),
+          Container(
+            height: 50,
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(
+        color: Colors.pink,
+        borderRadius: BorderRadius.circular(10),
+      ),
+          )
         ],
+      ),
+    );
+  }
+}
+
+class ReusableCard extends StatelessWidget {
+   ReusableCard({
+   required this.Colour
+  });
+
+Color Colour;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        color: Colour,
+        borderRadius: BorderRadius.circular(10),
       ),
     );
   }
